@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+// Dereference a pointer...
+
+int main()
+{
+    int i;
+    int meatBalls[5] = {1,2,3,4,5};
+
+    printf("Element \t Address \t Value \n");
+
+    for (i=0; i<5; i++){
+        printf("meatBalls[%d] \t %p \t %d \n", i, &meatBalls[i], meatBalls[i]);
+    }
+
+    // Array names are just pointers to the first element...
+    printf("\nmeatBalls \t %p \n", meatBalls);
+
+    // Dereference...
+    printf("\n*meatBalls \t\t\t %d \n", *meatBalls);
+    printf("*(meatBalls+2) \t\t\t %d \n", *(meatBalls+2));
+
+
+    return 0;
+}

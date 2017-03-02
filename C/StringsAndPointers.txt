@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+// Dereference a pointer...
+
+int main()
+{
+
+    char movie1[] = "The Return of Buckyman";
+    char * movie2 = "Ham Bone";
+    puts(movie2);
+    movie2 = "New Movie Title";
+    puts(movie2);
+    return 0;
+}

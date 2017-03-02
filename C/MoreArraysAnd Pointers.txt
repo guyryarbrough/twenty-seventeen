@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+int deRefPointer();
+
+int main()
+{
+    // Strings and Pointers...
+
+    // An array is a constant pointer...
+    char characterArray[25] = "A character array";
+    printf("What's at &characterArray = %s\n\n",&characterArray);
+
+
+    // A pointer to a string is not a constant...
+    char *pString1 = "A string...";
+    printf("What's at the address pointed to by *pString1 = %s\n\n",pString1);
+
+    // This will print the contents...
+    pString1 = "What's at pString1 has been changed...";
+    printf("pString1 = %s\n\n",pString1);
+
+    printf("\n\n\n");
+
+    deRefPointer();
+
+    return 0;
+}
+
+
+int deRefPointer()
+{
+    // Dereference a pointer...
+
+    int i;
+    int meatBalls[5] = {1,2,3,4,5};
+
+    printf("Element \t Address \t Value \n");
+
+    for (i=0; i<5; i++){
+        printf("meatBalls[%d] \t %p \t %d \n", i, &meatBalls[i], meatBalls[i]);
+    }
+
+    // Array names are just pointers to the first element...
+    printf("\nmeatBalls \t %p \n", meatBalls);
+
+    // Dereference...
+    printf("\n*meatBalls \t\t\t %d \n", *meatBalls);
+    printf("*(meatBalls+2) \t\t\t %d \n", *(meatBalls+2));
+
+
+    return 0;
+}
